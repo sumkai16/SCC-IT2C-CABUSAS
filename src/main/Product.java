@@ -13,7 +13,14 @@ public class Product {
         this.sold = psold;
         this.stock = pstock;
     }
-    public void viewProduct(){
+    public void viewProduct(int id){
         
+        double profit = this.sold*this.price;
+        String status = (this.sold<1) ? "Out-of-Stock": "Available";
+        double tep = this.stock*this.price;
+        
+        
+        System.out.printf("%-10d %-10s %-10.2f %-10d %-10d %-10.2f %-10s    %-10.2f\n",
+                           this.id, this.name, this.price, this.sold,this.stock, profit, status, tep);
     }
 }
