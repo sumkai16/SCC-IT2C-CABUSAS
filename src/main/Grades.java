@@ -17,7 +17,7 @@ public class Grades {
         this.finals  = f;   
     }
     
-    public void viewGrade(int id){
+    public void viewGrade(){
         double ave = (this.prelim + this.midterm + this.prefi + this.finals)/4;
         String rem = (ave>3.0) ? "Failed": "Passed";
         

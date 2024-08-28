@@ -13,7 +13,7 @@ public class Product {
         this.sold = psold;
         this.stock = pstock;
     }
-    public void viewProduct(int id){
+    public void viewProduct(){
         
         double profit = this.sold*this.price;
         String status = (this.sold<1) ? "Out-of-Stock": "Available";
