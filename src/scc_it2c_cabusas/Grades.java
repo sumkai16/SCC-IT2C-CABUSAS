@@ -1,5 +1,5 @@
 
-package main;
+package scc_it2c_cabusas;
 
 
 public class Grades {
@@ -18,10 +18,10 @@ public class Grades {
     }
     
     public void viewGrade(){
-        double ave = (this.prelim + this.midterm + this.prefi + this.finals)/4;
+        double ave = (prelim + midterm + prefi + finals)/4;
         String rem = (ave>3.0) ? "Failed": "Passed";
         
         System.out.printf("%-10d %-10s %-10.2f %-10.2f %-10.2f %-10.2f %-10.2f %-10s\n",
-                           this.id, this.name, this.prelim, this.midterm, this.prefi, this.finals, ave, rem);
+                           id, name, prelim, midterm, prefi, finals, ave, rem);
     }
 }

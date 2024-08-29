@@ -1,4 +1,4 @@
-package main;
+package scc_it2c_cabusas;
 
 public class Product {
     int id;

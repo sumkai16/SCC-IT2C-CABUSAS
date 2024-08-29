@@ -1,5 +1,5 @@
 
-package main;
+package scc_it2c_cabusas;
 import java.text.DateFormat;
 import java.util.*;
 

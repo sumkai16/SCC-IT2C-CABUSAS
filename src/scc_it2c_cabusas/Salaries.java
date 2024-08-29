@@ -1,5 +1,5 @@
 
-package main;
+package scc_it2c_cabusas;
 
 
 public class Salaries {
@@ -15,12 +15,13 @@ public class Salaries {
         this.deduc = ededuc;
     }
     public void viewSalaries(){
-        double gross = (this.rate*this.hrs);
-        double np = (gross-this.deduc);
+        double gross = (rate*hrs);
+        double np = (gross-deduc);
         this.gr = gross;
         this.enp = np;
+        
         System.out.printf("%-10d %-10s %-10.2f %-10d %-10.2f %-10.2f %-10.2f \n",
-                           this.id, this.name, this.rate, this.hrs, gross, this.deduc, np );
+                           id, name, rate, hrs, gross, deduc, np );
        
         
     }

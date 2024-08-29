@@ -1,5 +1,5 @@
 
-package main;
+package scc_it2c_cabusas;
 import java.util.*;
 
 
@@ -10,9 +10,10 @@ public class Main {
         Scanner in = new Scanner(System.in);
         Salary sr = new Salary();
         sr.inputSalary();
-        
-        
-        
+//        netPay np = new netPay();
+//        np.getPay();
+//        
+//        
         
         
         
