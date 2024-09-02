@@ -1,26 +1,42 @@
 package scc_it2c_cabusas;
-
+import java.util.*;
 public class Product {
-    int id;
-    String name;
-    float price;
-    int sold, stock;
-    
-    public void addProduct(int pid, String pname, float pprice, int psold, int pstock){
-        this.id = pid;
-        this.name = pname;
-        this.price = pprice;
-        this.sold = psold;
-        this.stock = pstock;
+    public void inputProduct(){
+        Products[] pr = new Products[100];
+        Scanner in = new Scanner(System.in);
+        
+        System.out.print("How many Products do you want to add?:");
+        int nprod = in.nextInt();
+        for(int i=0; i<nprod; i++){
+            System.out.println("Product no "+(i+1));
+            System.out.print("Enter Product ID: ");
+            int id = in.nextInt();
+            System.out.print("Product Name: ");
+            String name = in.next();
+            System.out.print("Product Price: ");
+            double price = in.nextFloat();
+            System.out.print("Product Sold: ");
+            int sold = in.nextInt();
+            System.out.print("Stocks: ");
+            int stocks = in.nextInt();
+            System.out.println("\n");
+            pr[i] = new Products();
+            pr[i].addProduct(id,name, (float) price,sold,stocks);
+            
+        }
+         System.out.printf("%-10s %-10s %-10s %-10s %-10s %-10s %-10s %-10s\n",
+                "Product ID ","Name ","Price ","Sold ","Stock ","Profit ","Status ","Total Expected Profit ");
+        for(int i = 0; i<nprod; i++){
+            pr[i].viewProduct();
+        }
+        
+        
+        
+        
+        
+        
+        
     }
-    public void viewProduct(){
-        
-        double profit = this.sold*this.price;
-        String status = (this.sold<1) ? "Out-of-Stock": "Available";
-        double tep = this.stock*this.price;
-        
-        
-        System.out.printf("%-10d %-10s %-10.2f %-10d %-10d %-10.2f %-10s    %-10.2f\n",
-                           this.id, this.name, this.price, this.sold,this.stock, profit, status, tep);
-    }
+   
+       
 }
