@@ -9,7 +9,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         
-        System.out.print("Menu:\n1.Grading System\n2.Product\n3.NetPay\n4.Salary\nEnter Choice: ");
+        System.out.print("Menu:\n1.Grading System\n2.Product\n3.NetPay\n4.Salary\n5.Account Registration\nEnter Choice: ");
         int choice = in.nextInt();
         switch(choice){
             case 1:
@@ -27,6 +27,9 @@ public class Main {
             case 4:
                 Salary sr = new Salary();
                 sr.inputSalary();
+            case 5:
+                Account ac = new Account();
+                ac.inputAccounts();
         }
         
    
