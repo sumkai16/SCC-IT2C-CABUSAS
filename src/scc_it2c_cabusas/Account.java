@@ -21,10 +21,10 @@ public class Account {
             
             
             System.out.print("First Name: ");
-            String fname = in.nextLine();
+            String fname = in.next();
            
             System.out.print("Last Name: ");
-             String lname= in.nextLine();
+             String lname= in.next();
             
             String email;
             do{
