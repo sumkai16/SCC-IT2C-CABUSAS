@@ -47,51 +47,48 @@ public class Accounts {
         return true;
         }
     
-    public static boolean passwordValidator(){
-        
-        return true;
-    }
+   
+    
+
+    public static boolean passwordValidator(String password) {
+        if (password.length() < 8) {
+            System.out.println("\nPassword is too short");
+            return false;
+        }
+    String admin = "admin", pass = "password", num="1234";
+        if (password.contains(admin) || password.contains(pass) || password.contains(num)) {
+            System.out.println("\nPassword is invalid, must not contain common passwords like 'admin', 'password', or '1234'.");
+            return false;
+        }
+
+    boolean hasUppercase = false, hasLowercase = false, hasDigit = false, hasSpecialChar = false;
+
+        for (char c : password.toCharArray()) {
+            if (Character.isUpperCase(c)) hasUppercase = true;
+            else if (Character.isLowerCase(c)) hasLowercase = true;
+            else if (Character.isDigit(c)) hasDigit = true;
+            else if (!Character.isLetterOrDigit(c)) hasSpecialChar = true;
+        }
+
+            if (!hasUppercase || !hasLowercase) {
+                System.out.println("\nPassword is invalid, must have both uppercase and lowercase letters.");
+                return false;
+            }
+            if (!hasDigit) {
+                System.out.println("\nPassword is invalid, must have at least one number.");
+                return false;
+            }
+            if (!hasSpecialChar) {
+                System.out.println("\nPassword is invalid, must have at least one special character.");
+                return false;
+            }
+    
+    return true;
+}
     public void viewAccounts(){
         System.out.printf("%-10d %-10s %-10s %-15s %-15s %-15s\n",
                            this.id, this.fname, this.lname, this.email,this.username, this.password);
     }
-
-    public static boolean passwordValidator(String password) {
-    if (password.length() <= 8) {
-        System.out.println("\nPassword is invalid, must be above 8 characters.");
-        return false;
-    }
-
-    if (password.equalsIgnoreCase("admin") || password.equalsIgnoreCase("password") || password.equals("1234")) {
-        System.out.println("\nPassword is invalid, must not contain common passwords like 'admin', 'password', or '1234'.");
-        return false;
-    }
-
-    boolean hasUppercase = false, hasLowercase = false, hasDigit = false, hasSpecialChar = false;
-
-    for (char c : password.toCharArray()) {
-        if (Character.isUpperCase(c)) hasUppercase = true;
-        else if (Character.isLowerCase(c)) hasLowercase = true;
-        else if (Character.isDigit(c)) hasDigit = true;
-        else if (!Character.isLetterOrDigit(c)) hasSpecialChar = true;
-    }
-
-    if (!hasUppercase || !hasLowercase) {
-        System.out.println("\nPassword is invalid, must have both uppercase and lowercase letters.");
-        return false;
-    }
-    if (!hasDigit) {
-        System.out.println("\nPassword is invalid, must have at least one number.");
-        return false;
-    }
-    if (!hasSpecialChar) {
-        System.out.println("\nPassword is invalid, must have at least one special character.");
-        return false;
-    }
-
-    return true;
-}
-
 }
             
     

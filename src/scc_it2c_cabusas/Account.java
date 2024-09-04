@@ -8,19 +8,23 @@ public class Account {
         Scanner in = new Scanner(System.in);
         System.out.print("Enter no. of accounts: ");
         int acc = in.nextInt();
-        
+        System.out.println("\n");
         for(int i=0; i<acc; i++){
             int id;
+            
             System.out.println("Details of Account "+(i+1)+"");
             do{
                 System.out.print("ID: ");
                 id = in.nextInt();
 
             }while(!Accounts.checkID(id));
+            
+            
             System.out.print("First Name: ");
-            String fname = in.next();
+            String fname = in.nextLine();
+           
             System.out.print("Last Name: ");
-            String lname = in.next();
+             String lname= in.nextLine();
             
             String email;
             do{
