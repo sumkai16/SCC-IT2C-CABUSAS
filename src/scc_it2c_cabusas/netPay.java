@@ -37,7 +37,7 @@ public class netPay {
          System.out.println("----------------------------------");
         System.out.println("\t\tNET PAY");
         System.out.println("----------------------------------");
-        System.out.printf("Net pay: Php%.2f",gross-tDeduct);
+        System.out.printf("Net pay: Php%.2f\n",gross-tDeduct);
     }
             
 }

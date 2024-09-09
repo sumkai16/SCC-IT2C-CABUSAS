@@ -86,7 +86,7 @@ public class Accounts {
     return true;
 }
     public void viewAccounts(){
-        System.out.printf("%-10d %-10s %-10s %-15s %-15s %-15s\n",
+        System.out.printf("%-15d %-15s %-15s %-20s %-20s %-20s\n",
                            this.id, this.fname, this.lname, this.email,this.username, this.password);
     }
 }

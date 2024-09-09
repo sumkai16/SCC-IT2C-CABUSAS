@@ -53,7 +53,7 @@ public class Account {
             new Accounts(id, fname, lname, email, uname, pword);
 
         }
-        System.out.printf("%-10s %-10s %-10s %-15s %-15s %-15s\n",
+        System.out.printf("\n%-15s %-15s %-15s %-20s %-20s %-20s\n",
                 "Account ID ","First Name ","Last Name ","Email ","Username ","Password ");
         for(int i=0; i<Accounts.currentCount; i++){
                 Accounts.ac[i].viewAccounts();

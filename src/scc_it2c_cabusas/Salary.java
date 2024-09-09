@@ -14,7 +14,7 @@ public class Salary {
         double ts=0;
         double ded =0;
         for(int i=0; i<emp; i++){
-            System.out.println("Details of EMP "+(i+1)+"");
+            System.out.println("Details of Employee no. "+(i+1)+"");
             System.out.print("ID: ");
             int id = in.nextInt();
             System.out.print("Name: ");
