@@ -18,20 +18,20 @@ public class Grades {
         this.finals  = f;   
     }
     public void editGrades(Grades[] gr, int size, int id){
-        Scanner sc = new Scanner(System.in);
+        Scanner in= new Scanner(System.in);
         for(int i = 0; i < size; i++){
             if(gr[i].id == id){
                 System.out.print("New Prelim Grade: ");
-                double prl = sc.nextFloat();
+                double prl = in.nextFloat();
                 gr[i].prelim = prl;
                 System.out.print("New Midterm Grade: ");
-                double mtl = sc.nextFloat();
+                double mtl = in.nextFloat();
                 gr[i].midterm = mtl;
                 System.out.print("New Prefinal Grade: ");
-                double pfl = sc.nextFloat();
+                double pfl = in.nextFloat();
                 gr[i].prefi = pfl;
                 System.out.print("New Finals Grade: ");
-                double fl = sc.nextFloat();
+                double fl = in.nextFloat();
                 gr[i].finals = fl;
             }
         }

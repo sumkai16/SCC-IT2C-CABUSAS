@@ -8,31 +8,29 @@ public class Grade {
         Scanner in = new Scanner(System.in);
         int id = 0, students=0;
         String name = null;
-        double p = 0;
-        double m = 0;
-        double pf = 0;
-        double f = 0 ;
+        double p = 0,m = 0,pf = 0,f = 0; 
         String op = null;
         do{
             System.out.println("Welcome to Grading App");
-        System.out.println("----------------------------------------------");
-        System.out.println("1. ADD\n"
-                + "2.VIEW\n"
+            System.out.println("----------------------------------------------");
+            System.out.println(""
+                + "1. ADD\n"
+                + "2. VIEW\n"
                 + "3. UPDATE\n"
                 + "4. DELETE\n"
                 + "5. EXIT");
-        System.out.println("----------------------------------------------");
-        System.out.print("Enter Action: ");
-        int act = in.nextInt();
+            System.out.println("----------------------------------------------");
+            System.out.print("Enter Action: ");
+            int act = in.nextInt();
         
-        while(act>5){
-            System.out.println("Invalid Action, Please Try again: ");
-            act = in.nextInt();        
-        }
+            while(act>5){
+                System.out.println("Invalid Action, Please Try again: ");
+                act = in.nextInt();        
+            }
         
         switch(act){
             case 1:
-                System.out.println("ADD");
+                System.out.println("ADDING...");
                 System.out.print("Enter no. of Students: ");
                 students = in.nextInt();
        
@@ -56,7 +54,7 @@ public class Grade {
             }
                 break;
             case 2:
-                System.out.println("VIEW");
+                System.out.println("VIEWING...");
                 for(int i=0; i<students; i++){
                     System.out.println("\n");
                     gr[i].viewGrade();
@@ -67,7 +65,7 @@ public class Grade {
                 System.out.println("UPDATE");
                 System.out.print("Enter the ID to update: ");
                 int ids = in.nextInt();
-                System.out.println("Editing ID "+ids);
+                System.out.println("Editing ID: "+ids);
                 gr2.editGrades(gr, students, ids);
             break;
             case 4:

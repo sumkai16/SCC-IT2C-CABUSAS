@@ -1,6 +1,8 @@
 
 package scc_it2c_cabusas;
 
+import java.util.Scanner;
+
 
 public class Accounts {
     int id;
@@ -8,7 +10,7 @@ public class Accounts {
     static Accounts[] ac = new Accounts[100];
     static int currentCount = 0;
     
-    public  Accounts(int sid, String sfname, String slname, String semail, String susername, String spassword){
+    public void addAccounts(int sid, String sfname, String slname, String semail, String susername, String spassword){
         this.id = sid;
         this.fname = sfname;
         this.lname = slname;
@@ -17,13 +19,44 @@ public class Accounts {
         this.password = spassword;    
         ac[currentCount++] = this;
     }
+    public void viewAccounts(){
+        System.out.printf("%-15d %-15s %-15s %-20s %-20s %-20s\n",
+                           this.id, this.fname, this.lname, this.email,this.username, this.password);
+    }
+    
+    public void editAccounts(Accounts[] ac, int size, int id){
+        Scanner in = new Scanner(System.in);
+        for(int i = 0; i < size; i++){
+            if(ac[i].id == id){
+               
+                String prw = null;
+                System.out.print("New Email: ");
+                String em = in.nextLine();
+                ac[i].email = em;
+                System.out.print("New Username: ");
+                String um = in.nextLine();
+                ac[i].username = um;
+                do{
+                    System.out.print("New Password: ");
+                    prw = in.nextLine();
+                    ac[i].password = prw;
+                }while(!Accounts.passwordValidator(prw));
+                
+            }
+        }
+    }
+    
+    
+    
+    
+    
     public static boolean checkID(int cid){
             for(int i =0; i<currentCount; i++){
                 if(ac[i].id == cid){
                     System.out.println("ID already exists. Please enter a different ID.");
                     return false;
                 }    
-        }
+            }
         return true;   
     }
     
@@ -33,7 +66,7 @@ public class Accounts {
                     System.out.println("Username already exists. Please enter a different Username.");
                     return false;
                 }
-        }
+            }
         return true;
         }
     
@@ -43,7 +76,7 @@ public class Accounts {
                     System.out.println("Email already exists. Please enter a different Email.");
                     return false;
                 }
-        }
+            }
         return true;
         }
     
@@ -64,7 +97,7 @@ public class Accounts {
     boolean hasUppercase = false, hasLowercase = false, hasDigit = false, hasSpecialChar = false;
 
         for (char c : password.toCharArray()) {
-            if (Character.isUpperCase(c)) hasUppercase = true;
+                 if (Character.isUpperCase(c)) hasUppercase = true;
             else if (Character.isLowerCase(c)) hasLowercase = true;
             else if (Character.isDigit(c)) hasDigit = true;
             else if (!Character.isLetterOrDigit(c)) hasSpecialChar = true;
@@ -85,10 +118,7 @@ public class Accounts {
     
     return true;
 }
-    public void viewAccounts(){
-        System.out.printf("%-15d %-15s %-15s %-20s %-20s %-20s\n",
-                           this.id, this.fname, this.lname, this.email,this.username, this.password);
-    }
+    
 }
             
     
